@@ -4,12 +4,14 @@ import 'package:flutter_complete_guide/screens/products_overview_screen.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final themeData = ThemeData(primarySwatch: Colors.purple, fontFamily: 'Lato');
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MyShop',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: themeData.copyWith(
+        colorScheme:
+            themeData.colorScheme.copyWith(secondary: Colors.deepOrange),
       ),
       home: ProductsOverviewScreen(),
     );
